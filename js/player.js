@@ -471,6 +471,17 @@ function initPlayer(videoUrl) {
         moreVideoAttr: {
             crossOrigin: 'anonymous',
         },
+        controls: [
+            {
+                name: 'next-episode',
+                position: 'left',
+                html: '<svg class="w-5 h-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>',
+                tooltip: '切换到下一集',
+                click: function() {
+                    playNextEpisode();
+                },
+            },
+        ],
         customType: {
             m3u8: function (video, url) {
                 // 清理之前的HLS实例
